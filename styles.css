@@ -1,0 +1,280 @@
+:root {
+  color-scheme: light;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #2a1b1d;
+  background: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.75rem 1rem;
+  background: #b31e27;
+  color: white;
+  border-radius: 0.5rem;
+  z-index: 100;
+}
+
+.site-header {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  padding: 0;
+}
+
+.site-header-content {
+  padding: 1.5rem 1.5rem 0;
+  max-width: 100%;
+}
+
+.site-header h1 {
+  margin: 0 0 1rem 0;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  text-align: center;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  border-top: 2px solid #d4af37;
+  border-bottom: 2px solid #d4af37;
+  width: 100%;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+.nav-list a {
+  color: #b34747;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav-list a:hover,
+.nav-list a:focus-visible {
+  text-decoration: underline;
+}
+
+.page-grid {
+  display: grid;
+  gap: 0;
+  padding: 0;
+  max-width: 100%;
+  margin: 0;
+  background: white;
+}
+
+.book-card {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 0;
+  background: transparent;
+  padding: 2rem 1.5rem;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  margin: 0;
+}
+
+.book-meta {
+  display: grid;
+  gap: 1rem;
+  padding-right: 1.5rem;
+  border-right: 2px solid #d4af37;
+  min-height: 100%;
+  align-content: start;
+}
+
+.book-date,
+.book-detail,
+.book-rating {
+  margin: 0;
+  color: #7a5b53;
+  font-size: 0.95rem;
+}
+
+.book-detail {
+  margin-top: 0.25rem;
+}
+
+.book-rating {
+  font-size: 1.5rem;
+  color: #d4af37;
+}
+
+.book-content {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.book-content h2 {
+  margin: 0;
+  color: #a31e2d;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  text-align: center;
+}
+
+
+.book-display {
+  display: grid;
+  gap: 1.5rem;
+  justify-items: center;
+  padding-bottom: 100px;
+  border-bottom: 2px solid #d4af37;
+}
+
+.book-cover {
+  margin: 0;
+  border-radius: 1rem;
+  overflow: hidden;
+  width: min(100%, 320px);
+  height: fit-content;
+}
+
+.book-cover img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.book-copy {
+  margin: 0;
+  max-width: 42rem;
+  color: #7a5b53;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.page-footer {
+  padding: 1.5rem;
+  color: #7a5b53;
+  text-align: center;
+  margin: 0;
+  background: white;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 719px) {
+  .site-header {
+    text-align: center;
+  }
+
+  .book-card {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+  }
+
+  .book-meta {
+    border-right: none;
+    padding-right: 0;
+    border-bottom: 2px solid #d4af37;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+
+  .book-date, .book-detail, .book-rating {
+    font-style: italic;
+    margin-bottom: 0.25rem;
+  }
+
+  .book-content h2 {
+    text-align: left;
+    margin-left: 0;
+    margin-bottom: 1rem;
+  }
+
+  .book-display {
+    gap: 1.5rem;
+    justify-items: start;
+  }
+
+  .book-cover {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  .book-copy {
+    text-align: left;
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  .page-footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (min-width: 720px) {
+  .book-card {
+    grid-template-columns: 180px 1fr;
+    align-items: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
