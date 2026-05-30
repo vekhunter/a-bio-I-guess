@@ -3,6 +3,116 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice with Array Methods</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="main-content">
+  <!-- Hero Section -->
+  <section class="hero">
+  <h1>Practice with Array Methods</h1>
+  <h2>Dynamic Data, Template Literals, and DOM Manipulation</h2>
+  <p class="intro">This page demonstrates <strong>forEach()</strong>, <strong>map()</strong>, <strong>filter()</strong>, <strong>indexOf()</strong>, <strong>reduce()</strong>, template literals, DOM injection, and arrays of objects. Explore each section to see live JavaScript in action!</p>
+  </section>
+
+  <!-- forEach() Demonstration -->
+  <section class="card">
+  <h3>forEach() Demonstration</h3>
+  <p><code>forEach()</code> executes a provided function once for each array element. It is commonly used to perform side effects, like logging or updating the DOM, for every item in an array.</p>
+  <pre><code>const steps = ['one', 'two', 'three'];
+steps.forEach(step => console.log(step));</code></pre>
+  <div class="output-label">Console Output:</div>
+  <div class="output-note">(Open DevTools Console to view)</div>
+  <p>forEach() loops through each element and runs the callback function.</p>
+  </section>
+
+  <!-- map() + Template Literals + DOM Injection -->
+  <section class="card">
+  <h3>map() + Template Literals + DOM Injection</h3>
+  <p><code>map()</code> creates a new array by applying a function to every element. Here, we use template literals to create <code>&lt;li&gt;</code> elements and inject them into the DOM.</p>
+  <pre><code>const listItems = steps.map(step =&gt; `&lt;li&gt;${step}&lt;/li&gt;`);
+document.querySelector('#myList').innerHTML = listItems.join('');</code></pre>
+  <div class="output-label">Dynamic List Output:</div>
+  <ul id="myList" class="dynamic-list"></ul>
+  <p><code>.join('')</code> removes commas between list items.</p>
+  </section>
+
+  <!-- GPA Conversion Example (switch + map + reduce) -->
+  <section class="card">
+  <h3>GPA Conversion Example (switch + map + reduce)</h3>
+  <pre><code>function convert(grade) {
+  switch (grade){
+  case 'A': points = 4; break;
+  case 'B': points = 3; break;
+  case 'C': points = 2; break;
+  case 'D': points = 1; break;
+  case 'F': points = 0; break;
+  default: alert('not a valid grade');
+  }
+  return points;
+}
+const grades = ['A', 'B', 'C'];
+const gpaPoints = grades.map(convert);
+const totalPoints = gpaPoints.reduce((sum, val) =&gt; sum + val, 0);
+const averageGPA = (totalPoints / gpaPoints.length).toFixed(2);</code></pre>
+  <div class="output-label">GPA Summary:</div>
+  <div id="gpaSummary" class="dynamic-output"></div>
+  <div class="output-note">(See console for array and calculation details)</div>
+  </section>
+
+  <!-- filter() Example -->
+  <section class="card">
+  <h3>filter() Example</h3>
+  <p><code>filter()</code> creates a new array with all elements that pass the test implemented by the provided function. It is useful for selecting a subset of data.</p>
+  <pre><code>const words = ['watermelon', 'peach', 'apple', 'tomato', 'grape'];
+const shortWords = words.filter(word =&gt; word.length &lt; 6);</code></pre>
+  <div class="output-label">Filtered Words:</div>
+  <div id="filteredWords" class="dynamic-output"></div>
+  </section>
+
+  <!-- indexOf() Example -->
+  <section class="card">
+  <h3>indexOf() Example</h3>
+  <p><code>indexOf()</code> returns the first index at which a given element can be found in the array, or -1 if it is not present.</p>
+  <pre><code>const numbers = [12, 34, 21, 54];
+const luckyNumber = 21;
+const luckyIndex = numbers.indexOf(luckyNumber);</code></pre>
+  <div class="output-label">Index of Lucky Number:</div>
+  <div id="luckyIndex" class="dynamic-output"></div>
+  </section>
+
+  <!-- Array of Objects — Student Directory -->
+  <section class="card">
+  <h3>Array of Objects — Student Directory</h3>
+  <p>Arrays of objects allow you to store complex data. Here, each student is represented as an object with <code>first</code> and <code>last</code> properties. We dynamically create a <code>&lt;div&gt;</code> for each student, insert two <code>&lt;span&gt;</code> elements, and add an <code>&lt;hr&gt;</code> below each entry.</p>
+  <pre><code>const students = [
+  {last: 'Andrus', first: 'Aaron'},
+  {last: 'Masa', first:'Manny'},
+  {last: 'Tanda', first: 'Tamanda'}
+];</code></pre>
+  <div class="output-label">Student Directory:</div>
+  <div id="studentDirectory" class="student-list"></div>
+  </section>
+
+  <!-- Console Output Notes -->
+  <section class="card callout">
+  <h3>Console Output Notes</h3>
+  <p>Some results appear in the browser console. <strong>Open DevTools (F12 or right-click → Inspect → Console tab)</strong> to view all outputs and see how the code works behind the scenes.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+  <p>Brigham Young University–Idaho 2026</p>
+  </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kids Read For Fun</title>
   <link rel="stylesheet" href="styles.css">
 </head>
